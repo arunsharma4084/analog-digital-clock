@@ -1,0 +1,171 @@
+:root {
+  --color-primary: hsl(180, 90%, 26%);
+  --color-primary-light: hsl(180, 90%, 60%);
+  --color-secondary: hsl(7, 89%, 62%);
+  --color-secondary-dark: hsl(7, 89%, 40%);
+  --color-gray-50: hsl(210deg, 19%, 10%);
+  --color-gray-100: hsl(210deg, 15%, 20%);
+  --color-gray-200: hsl(210deg, 15%, 25%);
+  --color-gray-300: hsl(210deg, 10%, 40%);
+  --color-gray-400: hsl(210deg, 9%, 45%);
+  --color-gray-500: hsl(210deg, 8%, 50%);
+  --color-gray-600: hsl(210deg, 12%, 55%);`
+  --color-gray-800: hsl(210deg, 20%, 77%);
+  --color-gray-900: hsl(210deg, 25%, 88%);
+  --color-gray-1000: hsl(210deg, 75%, 96%);
+}
+
+html {
+  --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Arial, Helvetica,
+    Verdana, Tahoma, sans-serif;
+  --font-serif: Georgia, "Times New Roman", Times, serif;
+  --font-monospace: "Noto Sans Mono", "Courier New", Courier, monospace;
+}
+
+body {
+  display: grid;
+  place-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 1px solid var(--color-gray-500);
+  border-radius: 1rem;
+  padding: 32px;
+}
+
+.analog-clock {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: var(--color-gray-1000);
+  background: radial-gradient(circle, rgba(246,8,8,1) 0%, rgba(249,226,159,1) 15%, rgba(74,188,254,1) 100%);
+  border: 12px solid #301934;
+  box-shadow: 0 8px 16px -4px #301934;
+}
+
+.central-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-gray-400);
+  box-shadow: 0 2px 4px -1px black;
+  z-index: 10;
+}
+
+.hand {
+  position: absolute;
+  border-radius: 0 0 50% 50%;
+}
+
+.hour {
+  width: 5px;
+  height: 67px;
+  background: black;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  margin-left: -2px;
+  transform-origin: 50% 0;
+}
+
+.minute {
+  width: 5px;
+  height: 90px;
+  background: black;
+  top: 50%;
+  left: 50%;
+  margin: -1px;
+  transform-origin: 50% 0;
+  z-index: 6;
+}
+
+.second {
+  width: 3px;
+  height: 90px;
+  background: #FF1178;
+  top: 50%;
+  left: 50%;
+  margin-left: -1px;
+  z-index: 7;
+  transform-origin: 50% 0;
+}
+
+.hour-number {
+  font-weight: bold;
+  font-size: 1.4rem;
+  font-family: var(--font-monospace);
+  color: #301934;
+  position: absolute;
+  z-index: 4;
+}
+
+.three {
+  top: 50%;
+  right: 28px;
+  margin-top: -17px;
+}
+
+.six {
+  left: 50%;
+  margin-left: -7px;
+  bottom: 22px;
+}
+
+.nine {
+  top: 50%;
+  left: 28px;
+  margin-top: -18px;
+}
+
+.twelve {
+  left: 50%;
+  margin-left: -14px;
+  top: 20px;
+}
+
+.lines {
+  position: absolute;
+  background: #301934;
+  width: 1px;
+  height: 15px;
+  z-index: 2;
+  left: 50%;
+  top: 0px;
+  margin-left: -2px;
+  transform-origin: 50% 140px;
+}
+
+.lines:nth-of-type(5n - 1) {
+  width: 3px;
+  height: 24px;
+}
+
+.digital-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+  font-family: var(--font-monospace);
+  font-size: 2rem;
+}
+
+.time {
+  color: black;
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.date-desc {
+  color: #493376;
+}
